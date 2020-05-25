@@ -181,7 +181,7 @@ Mkfifo(const char *pathname, mode_t mode)
 void
 Mktemp(char *template)
 {
-	if (mktemp(template) == NULL || template[0] == 0)
+	if (mkdtemp(template) == NULL || template[0] == 0)
 		err_quit("mktemp error");
 }
 

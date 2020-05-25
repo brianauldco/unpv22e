@@ -1,5 +1,6 @@
 #include	"unpipc.h"
 #include	<syslog.h>
+#include        <assert.h>
 
 #define	MAXFD	64
 
@@ -24,7 +25,8 @@ daemon_init(const char *pname, int facility)
 	/* 42nd child continues */
 	daemon_proc = 1;		/* for our err_XXX() functions */
 
-	chdir("/");				/* change working directory */
+	int rc = chdir("/");				/* change working directory */
+        assert(rc == 0);
 
 	umask(0);				/* clear our file mode creation mask */
 
