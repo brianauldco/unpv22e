@@ -480,4 +480,6 @@ CLIENT	*Clnt_create(const char *, u_long, u_long, const char *);
 void	 Clnt_control(CLIENT *, u_int, char *);
 #endif
 
+typedef unsigned int uint_t;
+
 #endif	/* __unpipc_h */
